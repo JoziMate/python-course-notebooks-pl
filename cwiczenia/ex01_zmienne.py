@@ -1,8 +1,6 @@
 """
 ex01_zmienne.py
 Definicje zadań dla modułu 1: Zmienne i typy.
-Ten plik NIE jest pokazywany widzowi w notebooku — leży w repo,
-notebook tylko go importuje.
 """
 
 from checker import Zadanie, ZestawZadan
