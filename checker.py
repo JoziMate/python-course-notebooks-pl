@@ -5,7 +5,7 @@ inspirowany mechanizmem learntools z Kaggle Learn.
 
 Użycie w notebooku:
 
-    !wget -q https://raw.githubusercontent.com/JoziMate/<repo>/main/checker.py
+    !wget -q https://raw.githubusercontent.com/JoziMate/python-course-notebooks-pl/main/checker.py
     from checker import Zadanie, ZestawZadan
 
     zestaw = ZestawZadan("Moduł 1: Zmienne", {
