@@ -1,36 +1,44 @@
 """
-_szablon_cwiczenia.py
-INSTRUKCJA UŻYCIA:
-1. Skopiuj ten plik do folderu cwiczenia/ i zmień nazwę na cwiczenieXX_{temat}.py
-   (np. cwiczenie02_petle.py).
-2. Zmień nazwę zestawu ("Moduł {XX}: {Temat}").
-3. Dodaj/usuń klucze "z1", "z2", ... odpowiadające liczbie zadań w notebooku.
-4. Wypełnij każde Zadanie: ustaw zmienna+oczekiwana LUB warunek, podpowiedzi i kod_rozwiazania.
-5. W notebooku zaktualizuj komórkę konfiguracyjną (wget + import).
-
+cwiczenie{XX}_{temat}.py
+Definicje zadań dla modułu {NUMER}: {TYTUŁ MODUŁU}.
 Ten plik NIE jest pokazywany widzowi w notebooku — leży w repo
 w folderze cwiczenia/, notebook tylko go importuje.
+
+INSTRUKCJA UŻYCIA SZABLONU:
+1. Zmień nazwę pliku na: cwiczenieXX_temat.py (XX = numer modułu z zerem wiodącym, np. 02)
+2. Zastąp poniższe zadania (z1, z2, ...) właściwą treścią
+3. Liczba zadań tutaj MUSI się zgadzać z liczbą zN.sprawdz() w notebooku
+4. Usuń ten komentarz z instrukcją przed wgraniem do repo (opcjonalnie)
 """
 
 from checker import Zadanie, ZestawZadan
 
-zestaw = ZestawZadan("Moduł {XX}: {Temat}", {
+zestaw = ZestawZadan("Moduł {NUMER}: {TYTUŁ MODUŁU}", {
+
+    # --- Zadanie 1 ---
+    # Najprostszy wariant: sprawdzenie wartości jednej zmiennej.
     "z1": Zadanie(
         zmienna="{nazwa_zmiennej}",
-        oczekiwana={oczekiwana_wartosc},
+        oczekiwana="{oczekiwana_wartość}",
         podpowiedzi=[
-            "{Podpowiedź 1 dla zadania 1.}",
-            "{Podpowiedź 2 dla zadania 1.}",
+            "{podpowiedź 1 — ogólna, np. jakiej funkcji/operatora użyć}",
+            "{podpowiedź 2 — bardziej konkretna, blisko rozwiązania}",
         ],
-        kod_rozwiazania="{nazwa_zmiennej} = {oczekiwana_wartosc}"
+        kod_rozwiazania="{nazwa_zmiennej} = {oczekiwana_wartość}"
     ),
+
+    # --- Zadanie 2 ---
+    # Wariant z warunkiem niestandardowym — gdy sama równość nie wystarcza
+    # (np. sprawdzenie typu, zakresu wartości, długości listy, kilku warunków naraz).
     "z2": Zadanie(
-        warunek=lambda ns: {wyrazenie_warunku},
+        warunek=lambda ns: True,  # TODO: zastąp własną logiką, np.:
+                                  # isinstance(ns.get("x"), float) and ns["x"] > 0
         podpowiedzi=[
-            "{Podpowiedź 1 dla zadania 2.}",
+            "{podpowiedź 1}",
         ],
-        kod_rozwiazania="{przyklad_rozwiazania}"
+        kod_rozwiazania="{przykładowy kod rozwiązania}"
     ),
-    # Dodaj kolejne zadania według potrzeb:
-    # "z3": Zadanie(...),
+
+    # --- Skopiuj blok wyżej dla kolejnych zadań (z3, z4, ...) ---
+
 })
